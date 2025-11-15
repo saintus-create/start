@@ -7,7 +7,7 @@ import { useSelectedLayoutSegment } from "next/navigation";
 import * as React from "react";
 import { ColorModeSwitcher } from "./color-mode-switcher";
 import { Logo } from "./logo";
-import { buttonVariants } from "./ui/button";
+import { Button, buttonVariants } from "./ui/button";
 
 interface NavProps {
   items?: {
