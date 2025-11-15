@@ -1,9 +1,26 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Switzer } from 'next/font/local';
 import "./globals.css";
 import { Provider } from "./provider";
 
-const inter = Inter({ subsets: ["latin"] });
+const switzer = Switzer({
+  src: [
+    {
+      path: './fonts/Switzer-Variable.woff2',
+      weight: '100 900',
+      style: 'normal',
+    },
+    {
+      path: './fonts/Switzer-Italic.woff2',
+      weight: '100 900',
+      style: 'italic',
+    },
+  ],
+  display: 'swap',
+  variable: '--font-switzer',
+  fallback: ['system-ui', 'sans-serif'],
+  adjustFontFallback: true,
+});
 
 export const metadata: Metadata = {
   title: "James St. James",
@@ -17,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={switzer.className}>
         <Provider>
           {children}
         </Provider>
