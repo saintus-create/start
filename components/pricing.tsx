@@ -19,6 +19,8 @@ type PricingCardProps = {
   buttonText: string;
   buttonHref: string;
   isPopular?: boolean;
+  icon?: React.ReactNode;
+  priceSuffix?: string;
 };
 
 export function PricingCard(props: PricingCardProps) {
@@ -29,13 +31,20 @@ export function PricingCard(props: PricingCardProps) {
       }`}
     >
       <CardHeader>
-        <CardTitle className="text-2xl font-bold">{props.title}</CardTitle>
-        <CardDescription>{props.description}</CardDescription>
+        <div className="flex items-center justify-between">
+          <div>
+            <CardTitle className="text-2xl font-bold">{props.title}</CardTitle>
+            <CardDescription>{props.description}</CardDescription>
+          </div>
+          {props.icon && <div className="text-primary">{props.icon}</div>}
+        </div>
       </CardHeader>
       <CardContent>
         <div className="mb-4">
           <span className="text-4xl font-bold">{props.price}</span>
-          <span className="text-muted-foreground">/month</span>
+          {props.priceSuffix && (
+            <span className="text-muted-foreground">{props.priceSuffix}</span>
+          )}
         </div>
         <ul className="space-y-2">
           {props.features.map((feature, index) => (

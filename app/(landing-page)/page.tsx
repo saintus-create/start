@@ -1,173 +1,120 @@
-import { FeatureGrid } from "@/components/features";
-import { Hero } from "@/components/hero";
-import { PricingGrid } from "@/components/pricing";
-import { GitHubLogoIcon } from "@radix-ui/react-icons";
-import { ComponentIcon, Users } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Twitter, Linkedin, Mail, MessageSquare, BookOpen, Mic2, Users2, Globe2, Gavel } from "lucide-react";
 
 export default function IndexPage() {
-
   return (
-    <>
-      <Hero
-        capsuleText="James St. James"
-        capsuleLink="/about"
-        title="Advocate & Speaker"
-        subtitle="Championing change through advocacy, writing, and public speaking. Bridging communities and creating impact."
-        primaryCtaText="Read My Blog"
-        primaryCtaLink="/blog"
-        secondaryCtaText="Get In Touch"
-        secondaryCtaLink="#contact"
-        credits={
-          <>
-            Connect with me on{" "}
-            <a
-              href="https://twitter.com/jamesstjames"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="underline"
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
+            James St. James
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-2xl mx-auto">
+            Advocate, Writer, and Public Speaker
+          </p>
+          
+          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+            <Link 
+              href="#work" 
+              className="px-6 py-3 bg-black text-white rounded-md hover:bg-gray-800 transition-colors flex items-center justify-center gap-2"
             >
-              Twitter
+              View My Work <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link 
+              href="#contact" 
+              className="px-6 py-3 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
+            >
+              Get In Touch
+            </Link>
+          </div>
+          
+          <div className="flex justify-center space-x-6">
+            <a href="https://twitter.com/jamesstjames" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-500">
+              <span className="sr-only">Twitter</span>
+              <Twitter className="h-6 w-6" />
             </a>
-          </>
-        }
-      />
+            <a href="https://linkedin.com/in/jamesstjames" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-500">
+              <span className="sr-only">LinkedIn</span>
+              <Linkedin className="h-6 w-6" />
+            </a>
+            <a href="mailto:hello@jamesstjames.com" className="text-gray-400 hover:text-gray-500">
+              <span className="sr-only">Email</span>
+              <Mail className="h-6 w-6" />
+            </a>
+          </div>
+        </div>
+      </section>
 
-      <div id="features" />
-      <FeatureGrid
-        title="Areas of Focus"
-        subtitle="Key aspects of my advocacy work"
-        items={[
-          {
-            icon: (
-              <svg viewBox="0 0 24 24" className="h-12 w-12 fill-current">
-                <path d="M11.572 0c-.176 0-.31.001-.358.007a19.76 19.76 0 0 1-.364.033C7.443.346 4.25 2.185 2.228 5.012a11.875 11.875 0 0 0-2.119 5.243c-.096.659-.108.854-.108 1.747s.012 1.089.108 1.748c.652 4.506 3.86 8.292 8.209 9.695.779.25 1.6.422 2.534.525.363.04 1.935.04 2.299 0 1.611-.178 2.977-.577 4.323-1.264.207-.106.247-.134.219-.158-.02-.013-.9-1.193-1.955-2.62l-1.919-2.592-2.404-3.558a338.739 338.739 0 0 0-2.422-3.556c-.009-.002-.018 1.579-.023 3.51-.007 3.38-.01 3.515-.052 3.595a.426.426 0 0 1-.206.214c-.075.037-.14.044-.495.044H7.81l-.108-.068a.438.438 0 0 1-.157-.171l-.05-.106.006-4.703.007-4.705.072-.092a.645.645 0 0 1 .174-.143c.096-.047.134-.051.54-.051.478 0 .558.018.682.154.035.038 1.337 1.999 2.895 4.361a10760.433 10760.433 0 0 0 4.735 7.17l1.9 2.879.096-.063a12.317 12.317 0 0 0 2.466-2.163 11.944 11.944 0 0 0 2.824-6.134c.096-.66.108-.854.108-1.748 0-.893-.012-1.088-.108-1.747-.652-4.506-3.859-8.292-8.208-9.695a12.597 12.597 0 0 0-2.499-.523A33.119 33.119 0 0 0 11.573 0zm4.069 7.217c.347 0 .408.005.486.047a.473.473 0 0 1 .237.277c.018.06.023 1.365.018 4.304l-.006 4.218-.744-1.14-.746-1.14v-3.066c0-1.982.01-3.097.023-3.15a.478.478 0 0 1 .233-.296c.096-.05.13-.054.5-.054z" />
-              </svg>
-            ),
-            title: "Policy Work",
-            description:
-              "Advancing policy changes through strategic initiatives and legislative engagement.",
-          },
-          {
-            icon: (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 256 256"
-                className="h-12 w-12 fill-current"
-              >
-                <rect width="256" height="256" fill="none"></rect>
-                <line
-                  x1="208"
-                  y1="128"
-                  x2="128"
-                  y2="208"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="22"
-                ></line>
-                <line
-                  x1="192"
-                  y1="40"
-                  x2="40"
-                  y2="192"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="22"
-                ></line>
-              </svg>
-            ),
-            title: "Speaking",
-            description:
-              "Sharing insights on social change and community empowerment through public talks.",
-          },
-          {
-            icon: (
-              <svg
-                width="201"
-                height="242"
-                viewBox="0 0 201 242"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-12 w-12 fill-current"
-              >
-                <path d="M104.004 1.78785C101.751 0.662376 99.1002 0.663161 96.8483 1.78998L4.9201 47.7892C2.21103 49.1448 0.5 51.9143 0.5 54.9436V130.526C0.5 133.556 2.2123 136.327 4.92292 137.682L96.9204 183.67C99.1725 184.796 101.823 184.796 104.075 183.67L168.922 151.246C174.242 148.587 180.5 152.455 180.5 158.402V168.855C180.5 171.885 178.788 174.655 176.078 176.01L104.077 212.011C101.825 213.137 99.1745 213.137 96.9224 212.012L12.0771 169.598C6.75791 166.939 0.5 170.807 0.5 176.754V187.048C0.5 190.083 2.21689 192.856 4.93309 194.209L97.0051 240.072C99.2529 241.191 101.896 241.191 104.143 240.07L196.071 194.21C198.785 192.857 200.5 190.084 200.5 187.052V119.487C200.5 113.54 194.242 109.672 188.922 112.332L132.078 140.754C126.758 143.414 120.5 139.546 120.5 133.599V123.145C120.5 120.115 122.212 117.345 124.922 115.99L196.078 80.4124C198.788 79.0573 200.5 76.2872 200.5 73.257V54.9468C200.5 51.9158 198.787 49.1451 196.076 47.7904L104.004 1.78785Z" />
-              </svg>
-            ),
-            title: "Community Work",
-            description:
-              "Building inclusive communities through grassroots organizing and leadership.",
-          },
-          {
-            icon: <Users className="h-12 w-12" />,
-            title: "Workshops",
-            description: "Providing tools and knowledge for others to create positive change.",
-          },
-          {
-            icon: <GitHubLogoIcon className="h-12 w-12" />,
-            title: "Writing",
-            description: "Sharing analysis and perspectives on social issues and policy.",
-          },
-          {
-            icon: <ComponentIcon className="h-12 w-12" />,
-            title: "Consulting",
-            description: "Advising on advocacy strategies and community engagement.",
-          },
-        ]}
-      />
+      {/* Work Section */}
+      <section id="work" className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">My Work</h2>
+            <p className="mt-4 text-xl text-gray-600">Areas of expertise and recent projects</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: <MessageSquare className="h-8 w-8 text-blue-600" />,
+                title: "Public Speaking",
+                description: "Engaging talks on social justice, policy reform, and community empowerment."
+              },
+              {
+                icon: <BookOpen className="h-8 w-8 text-green-600" />,
+                title: "Writing",
+                description: "Thought-provoking articles and policy papers on contemporary issues."
+              },
+              {
+                icon: <Mic2 className="h-8 w-8 text-purple-600" />,
+                title: "Podcasting",
+                description: "Host of 'Voices for Change' discussing social and political issues."
+              },
+              {
+                icon: <Users2 className="h-8 w-8 text-red-600" />,
+                title: "Community Organizing",
+                description: "Leading grassroots initiatives for social change and policy reform."
+              },
+              {
+                icon: <Globe2 className="h-8 w-8 text-yellow-600" />,
+                title: "Global Advocacy",
+                description: "Working with international organizations on human rights issues."
+              },
+              {
+                icon: <Gavel className="h-8 w-8 text-indigo-600" />,
+                title: "Policy Development",
+                description: "Advising on and developing policies for social impact."
+              }
+            ].map((item, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div className="h-12 w-12 rounded-full bg-gray-100 flex items-center justify-center mb-4">
+                  {item.icon}
+                </div>
+                <h3 className="text-lg font-medium text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-gray-600">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      <div id="pricing" />
-      <PricingGrid
-        title="Current Work"
-        subtitle="Ongoing projects and initiatives"
-        items={[
-          {
-            title: "Advocacy Work",
-            price: "Ongoing",
-            description: "Supporting emerging advocates",
-            features: [
-              "Workshops",
-              "Resources",
-              "Mentorship",
-              "Support",
-              "Networking",
-            ],
-            buttonText: "Learn More",
-            buttonHref: "/work/advocacy",
-          },
-          {
-            title: "Policy Work",
-            price: "Active",
-            description: "Advancing policy changes",
-            features: [
-              "Research",
-              "Advocacy",
-              "Forums",
-              "Coalitions",
-              "Impact",
-            ],
-            buttonText: "Get Involved",
-            isPopular: true,
-            buttonHref: "/work/policy",
-          },
-          {
-            title: "Speaking",
-            price: "Available",
-            description: "For events and talks",
-            features: [
-              "Keynotes",
-              "Panels",
-              "Workshops",
-              "Virtual",
-              "Presentations",
-            ],
-            buttonText: "Book Now",
-            buttonHref: "/contact",
-          },
-        ]}
-      />
-    </>
+      {/* Contact Section */}
+      <section id="contact" className="py-20">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-8">Get In Touch</h2>
+          <p className="text-xl text-gray-600 mb-8">
+            Interested in working together or have questions? Feel free to reach out.
+          </p>
+          <a 
+            href="mailto:hello@jamesstjames.com" 
+            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-black hover:bg-gray-800"
+          >
+            <Mail className="-ml-1 mr-2 h-5 w-5" />
+            hello@jamesstjames.com
+          </a>
+        </div>
+      </section>
+    </div>
   );
 }
