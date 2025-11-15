@@ -1,14 +1,13 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { useStackApp, useUser } from "@stackframe/stack";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useSelectedLayoutSegment } from "next/navigation";
 import * as React from "react";
 import { ColorModeSwitcher } from "./color-mode-switcher";
 import { Logo } from "./logo";
-import { Button, buttonVariants } from "./ui/button";
+import { buttonVariants } from "./ui/button";
 
 interface NavProps {
   items?: {
@@ -19,49 +18,13 @@ interface NavProps {
   }[];
 }
 
-function SignInSignUpButtons() {
-  const app = useStackApp();
+export function AuthButtons() {
   return (
-    <>
-      <Link
-        href={app.urls.signIn}
-        className={buttonVariants({ variant: "secondary" })}
-      >
-        Sign In
+    <div className="flex items-center gap-2">
+      <Link href="/" className={buttonVariants({ variant: "outline" })}>
+        Contact
       </Link>
-
-      <Link
-        href={app.urls.signUp}
-        className={buttonVariants({ variant: "default" })}
-      >
-        Sign Up
-      </Link>
-    </>
-  );
-}
-
-function AuthButtonsInner() {
-  const user = useUser();
-
-  if (user) {
-    return (
-      <Link
-        href="/dashboard"
-        className={buttonVariants({ variant: "default" })}
-      >
-        Dashboard
-      </Link>
-    );
-  } else {
-    return <SignInSignUpButtons />;
-  }
-}
-
-function AuthButtons() {
-  return (
-    <React.Suspense fallback={<SignInSignUpButtons />}>
-      <AuthButtonsInner />
-    </React.Suspense>
+    </div>
   );
 }
 
