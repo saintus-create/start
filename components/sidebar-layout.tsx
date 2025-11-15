@@ -184,11 +184,7 @@ export default function SidebarLayout(props: {
             </div>
           </div>
 
-          <UserButton
-            colorModeToggle={() =>
-              setTheme(resolvedTheme === "light" ? "dark" : "light")
-            }
-          />
+
         </div>
         <div className="flex-grow">{props.children}</div>
       </div>
