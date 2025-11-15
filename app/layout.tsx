@@ -10,11 +10,6 @@ const switzer = Switzer({
       weight: '100 900',
       style: 'normal',
     },
-    {
-      path: './fonts/Switzer-Italic.woff2',
-      weight: '100 900',
-      style: 'italic',
-    },
   ],
   display: 'swap',
   variable: '--font-switzer',
