@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Switzer } from 'next/font/local';
+import localFont from 'next/font/local';
 import "./globals.css";
 import { Provider } from "./provider";
 
-const switzer = Switzer({
+const switzer = localFont({
   src: [
     {
       path: './fonts/Switzer-Variable.woff2',
