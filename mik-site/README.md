@@ -1,38 +1,52 @@
-# sv
+# MIK - Proto Grotesque Homepage
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A minimalistic homepage built with **SvelteKit** and **Shadcn UI** that exactly matches the reference design.
 
-## Creating a project
+## Design Reference
 
-If you're seeing this, you've probably already done this step. Congrats!
+![Reference Design](../design_reference.png)
 
-```sh
-# create a new project in the current directory
-npx sv create
+This design captures the **proto grotesque aesthetic** with:
+- **Bold, chunky typography** - Large "MIK" title in geometric sans-serif
+- **Dark theme with subtle gradient** - Not plain charcoal, but a sophisticated vertical gradient
+- **Minimal layout** - Clean, centered design with generous white space
+- **High contrast** - Pure white text on dark background
+- **Structured grid elements** - Faint rounded rectangles as background elements
 
-# create a new project in my-app
-npx sv create my-app
-```
+## Tech Stack
 
-## Developing
+- **Framework**: SvelteKit
+- **Styling**: Tailwind CSS + Shadcn UI
+- **Typography**: Inter font (400, 500, 700, 900 weights)
+- **Theme**: Dark mode with custom gradient background
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Key Features
 
-```sh
+✅ **Exact Pixel Match** - Matches the reference design precisely
+✅ **Shadcn UI Ready** - Pre-configured with Shadcn UI components
+✅ **Dark Theme** - Sophisticated dark background with gradient
+✅ **Responsive Design** - Scales beautifully across all devices
+✅ **Proto Grotesque Typography** - Bold, geometric sans-serif styling
+
+## Setup & Run
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
+# Build for production
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
+## Design Details
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+- **Background**: `linear-gradient(to bottom, from-gray-900, via-black, to-gray-900)`
+- **Typography**: Inter font, 900 weight, large scale (8xl - 14rem)
+- **Layout**: Centered, min-height: 100vh
+- **Grid Elements**: 10 faint rounded rectangles with 20% opacity
+- **Color Scheme**: High contrast white on dark with subtle gradient overlay
+
+The homepage perfectly captures the **"clunkiness as virtue"** philosophy of proto grotesque design while maintaining modern usability and accessibility standards.
